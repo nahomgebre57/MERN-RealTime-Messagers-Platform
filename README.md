@@ -1,34 +1,5 @@
 # 💬 Whop – Real-Time Messenger Platform
 
-> This codebase is licensed for **commercial use only with a paid license** Plus **Full Source with Whop AI Integration**.
-> It’s \*\*free for personal use\*\*.
-> 👉 [Get a Commercial License + Full Code](https://techwithemma.gumroad.com/l/puvbkz)
-> 👉 [Read License Terms](https://github.com/TechWithEmmaYT/MERN-RealTime-Messagers-Platform/blob/main/TECHWITHEMMA-LICENSE.md)
-
----
-## 🤖 Get the Full Source code (Whop AI Code Included)
-
-This GitHub code includes only the core real-time messenger platform.
-To add **AI-powered conversations** (like Meta AI in Messenger), get the **Whop AI Source code**.
-
-- 📡 Real-time streaming via WebSocket
-- 🧠 Context-aware AI chat replies
-- 🔌 Secure backend + frontend AI setup
-- ⚙️ Ready local setup
-
-👉 [Get the Full Code + Whop AI Integration](https://techwithemma.gumroad.com/l/btzdi)
-
----
-
-## ❤️ Support TechWithEmma
-
-If you love this project and want to support future ones:
-
-- ☕ [Buy Me a Coffee](https://buymeacoffee.com/techwithemmaofficial)
-- 🌟 Star this repo
-- 🎥 [Subscribe on YouTube](https://tinyurl.com/subcribe-to-techwithEmma)
-
----
 
 ## 🗝️ Key Features
 
@@ -47,37 +18,77 @@ If you love this project and want to support future ones:
 - 🧩 Built with **Node.js**, **MongoDB**, **React**, and **TypeScript**
 - 🚀 Deployment Ready
 
-## 🧠 How to Use This Project
 
-### 📺 Watch the Complete Full Course on YouTube (Include the Whop AI)
+## 🛠️ Install & Run
 
-Learn how it all works — from real-time messaging to the complete folder structure and design system.
+Quick steps to get the project running locally (Windows / WSL / macOS / Linux).
 
-👉 [Watch the Course](https://youtube.com/@techwithemmaofficial)
+Prerequisites:
 
-## 🤖 Want the full code with _Whop AI Integration_?
+- Node.js v18+ and npm (or pnpm/yarn) installed
+- MongoDB running locally or a connection string
+- (Optional) Cloudinary account for file uploads
 
-- 📡 Real-time streaming via WebSocket
-- 🧠 Context-aware AI chat replies
-- 🔌 Secure backend + frontend AI setup
-- ⚙️ Ready configuration
+1) Backend
 
-👉 [Get the Full Code + Whop AI Integration](https://techwithemma.gumroad.com/l/btzdi)
+- Open a terminal and go to the backend folder:
 
----
+```bash
+cd backend
+```
 
-## 📜 License
+- Install dependencies:
 
-A **paid license** is required for commercial use.
-👉 [Get License](https://techwithemma.gumroad.com/l/puvbkz)
-Read full license here: [TECHWITHEMMA-LICENSE.md](https://github.com/TechWithEmmaYT/MERN-RealTime-Messagers-Platform/blob/main/TECHWITHEMMA-LICENSE.md)
+```bash
+npm install
+```
 
----
+- Create a `.env` file in `backend` (see `src/config/env.config.ts` for expected keys) and set up your MongoDB URI, JWT secret, Cloudinary keys, etc.
 
-## 🌟 Stay Connected
+- Run in development (uses nodemon + ts-node):
 
-For more premium SaaS & AI projects:
+```bash
+npm run dev
+```
 
-- 🧠 [TechWithEmma Gumroad Store](https://techwithemma.gumroad.com)
-- 🎥 [YouTube Channel](https://tinyurl.com/subcribe-to-techwithEmma)
-- 💬 [Follow on GitHub](https://github.com/TechWithEmmaYT)
+- Build for production and start:
+
+```bash
+npm run build
+npm start
+```
+
+2) Client
+
+- Open a new terminal and go to the client folder:
+
+```bash
+cd client
+```
+
+- Install dependencies:
+
+```bash
+npm install
+```
+
+- Run the dev server (Vite):
+
+```bash
+npm run dev
+```
+
+- Build for production:
+
+```bash
+npm run build
+```
+
+3) Notes
+
+- By default the client expects the backend API/socket server to be available at the address configured in `client/src/lib/axios-client.ts` and the socket URL in `client/src/hooks/use-socket.ts` — update those if your backend runs on a different host/port.
+- If you use a different package manager (pnpm or yarn) replace `npm install` / `npm run` accordingly.
+- For deployment, build both sides and serve the `client/dist` from a static host or integrate with the backend `dist` server.
+
+
+
