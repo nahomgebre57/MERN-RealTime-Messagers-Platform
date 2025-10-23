@@ -18,6 +18,7 @@ import "./config/passport.config";
 const app = express();
 const server = http.createServer(app);
 const PORT = Number(process.env.PORT) || Number(Env.PORT);
+const HOST = "0.0.0.0";
 //socket
 initializeSocket(server);
 
