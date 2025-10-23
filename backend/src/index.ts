@@ -17,7 +17,7 @@ import "./config/passport.config";
 
 const app = express();
 const server = http.createServer(app);
-
+const PORT = Number(process.env.PORT) || Number(Env.PORT);
 //socket
 initializeSocket(server);
 
@@ -58,7 +58,7 @@ if (Env.NODE_ENV === "production") {
 
 app.use(errorHandler);
 
-server.listen(Env.PORT, async () => {
+server.listen(PORT, async () => {
   await connectDatabase();
-  console.log(`Server running on port ${Env.PORT} in ${Env.NODE_ENV} mode`);
+  console.log(`Server running on port ${PORT} in ${Env.NODE_ENV} mode`);
 });
